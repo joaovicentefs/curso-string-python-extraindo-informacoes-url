@@ -1,5 +1,15 @@
-url = "bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real"
-print(url)
+# url = "bytebank.com/cambio?moedaDestino=dolar&quantidade=100&moedaOrigem=real"
+
+url = ' '
+
+# Sanitização de URL
+url = url.replace(' ', '')
+
+# Validação de URL
+if url == '':
+    raise ValueError('A URL está vazia')
+
+
 #Separa base e os parâmetros
 indice_interrogacao = url.find('?')# O método find retorna a posição do PRIMEIRO caracter da string informada.
 url_base = url[:indice_interrogacao]
