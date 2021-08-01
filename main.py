@@ -9,7 +9,6 @@ url = url.replace(' ', '')
 if url == '':
     raise ValueError('A URL está vazia')
 
-
 #Separa base e os parâmetros
 indice_interrogacao = url.find('?')# O método find retorna a posição do PRIMEIRO caracter da string informada.
 url_base = url[:indice_interrogacao]
