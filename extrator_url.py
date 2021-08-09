@@ -14,7 +14,7 @@ class ExtratorURL:
         if not self.url:
             raise ValueError('A URL está vazia')
         padrao_url = re.compile('(http(s)?://)?(www.)?bytebank.com(.br)?/cambio')
-        match = padrao_url.match(url)
+        match = padrao_url.match(self.url)
         if not match:
             raise ValueError('A URL não é válida')
 
@@ -47,13 +47,14 @@ class ExtratorURL:
     def __eq__(self, other): # O método especial que o Python chama quando utilizamos o '==' para comparar.
         return self.url == other.url
 
-url = 'bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar'
-extrator_url = ExtratorURL(url)
-extrator_url_2 = ExtratorURL(url)
-valor_quantidade = extrator_url.get_valor_parametro('quantidade')
-print(valor_quantidade)
-print('A URL informada tem',len(extrator_url), 'caracteres.')
-print(extrator_url)
+# url = 'bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar'
+# extrator_url = ExtratorURL(url)
+# extrator_url_2 = ExtratorURL(url)
+# valor_quantidade = extrator_url.get_valor_parametro('quantidade')
+# print(valor_quantidade)
+# print('A URL informada tem',len(extrator_url), 'caracteres.')
+# print(extrator_url)
+#
+# print(extrator_url == extrator_url_2)
 
-print(extrator_url == extrator_url_2)
 # o 'is' compara para saber se dois objetos são idênticos ou se eles são apenas iguais. O is compara o id do Objeto
